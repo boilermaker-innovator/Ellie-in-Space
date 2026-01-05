@@ -69,14 +69,6 @@
             padding: 20px;
         }
         
-        /* Sponsor sidebars - desktop */
-        .sponsor-sidebar {
-            display: none;
-            width: 160px;
-            padding: 20px 10px;
-            align-self: flex-start;
-        }
-        
         /* Desktop layout */
         @media (min-width: 900px) {
             .main-content {
@@ -84,27 +76,22 @@
                 justify-content: center;
                 align-items: flex-start;
             }
-            
-            .sponsor-sidebar {
-                display: block;
-                position: sticky;
-                top: 20px;
-            }
         }
         
-        /* Mobile sponsor section */
+        /* Sponsor section - bottom */
         .sponsor-mobile {
             display: flex;
             gap: 10px;
             width: 100%;
             max-width: 480px;
             margin-top: 15px;
+            overflow-x: auto;
+            padding-bottom: 5px;
         }
         
-        @media (min-width: 900px) {
-            .sponsor-mobile {
-                display: none;
-            }
+        .sponsor-mobile .sponsor-slot {
+            flex: 1;
+            min-width: 120px;
         }
         
         .sponsor-slot {
@@ -116,10 +103,6 @@
             cursor: pointer;
             transition: all 0.3s ease;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4), 0 0 10px rgba(124, 58, 237, 0.15);
-        }
-        
-        .sponsor-mobile .sponsor-slot {
-            flex: 1;
         }
         
         .sponsor-slot:hover {
@@ -549,16 +532,7 @@
         </header>
         
         <div class="main-content">
-            <!-- Left sponsor sidebar (desktop) -->
-            <aside class="sponsor-sidebar">
-                <div class="sponsor-slot" onclick="openSponsor('celestron')">
-                    <div class="sponsor-slot-label">Sponsor</div>
-                    <div class="sponsor-logo">🔭</div>
-                    <div class="sponsor-name">Celestron</div>
-                    <div class="sponsor-tagline">See the universe closer</div>
-                    <div class="sponsor-itabs-btn">i</div>
-                </div>
-            </aside>
+            
             
             <!-- Main iTabs -->
             <main class="itabs-container">
@@ -637,19 +611,17 @@
                         <div class="sponsor-tagline">Learn math & science</div>
                         <div class="sponsor-itabs-btn">i</div>
                     </div>
+                    <div class="sponsor-slot" onclick="openSponsor('framer')">
+                        <div class="sponsor-slot-label">Sponsor</div>
+                        <div class="sponsor-logo">🎨</div>
+                        <div class="sponsor-name">Framer</div>
+                        <div class="sponsor-tagline">Build sites without code</div>
+                        <div class="sponsor-itabs-btn">i</div>
+                    </div>
                 </div>
             </main>
             
-            <!-- Right sponsor sidebar (desktop) -->
-            <aside class="sponsor-sidebar">
-                <div class="sponsor-slot" onclick="openSponsor('brilliant')">
-                    <div class="sponsor-slot-label">Sponsor</div>
-                    <div class="sponsor-logo">🚀</div>
-                    <div class="sponsor-name">Brilliant</div>
-                    <div class="sponsor-tagline">Learn math & science</div>
-                    <div class="sponsor-itabs-btn">i</div>
-                </div>
-            </aside>
+            
         </div>
     </div>
     
@@ -867,6 +839,29 @@
                             <p>First 200 people get <strong>20% off</strong> annual premium!</p>
                         </div>
                         <a href="https://brilliant.org/ellieinspace" target="_blank" class="action-btn" style="background: linear-gradient(135deg, #FF8C00, #FF6600);">🧠 TRY BRILLIANT FREE</a>
+                    `
+                },
+                framer: {
+                    title: '🎨 Framer',
+                    content: `
+                        <div class="popup-section">
+                            <h4>What It Is</h4>
+                            <p>Build a site that looks hand-coded—without hiring a developer. Design, animate, and publish professional websites with no code.</p>
+                        </div>
+                        <div class="popup-section">
+                            <h4>Why Creators Love It</h4>
+                            <ul>
+                                <li>No coding required</li>
+                                <li>Looks professionally designed</li>
+                                <li>Fast loading & SEO-friendly</li>
+                                <li>Launch for free</li>
+                            </ul>
+                        </div>
+                        <div class="popup-section">
+                            <h4>Special Offer</h4>
+                            <p>Use code <strong>ELLIEINSPACE</strong> for a free month of Framer Pro!</p>
+                        </div>
+                        <a href="https://framer.link/ellieinspace" target="_blank" class="action-btn" style="background: linear-gradient(135deg, #0055FF, #0099FF);">🎨 TRY FRAMER FREE</a>
                     `
                 }
             };
